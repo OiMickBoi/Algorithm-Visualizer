@@ -1,8 +1,11 @@
+# Use an official Node runtime as the base image
 FROM node:20
-WORKDIR /app
+
+# Install the Angular CLI globally
 RUN npm install -g @angular/cli
-COPY package*.json ./
-RUN npm install
-COPY . .
-EXPOSE 4200
-CMD ["ng", "serve", "--host", "0.0.0.0"]
+
+# Set the working directory in the container
+WORKDIR /app
+
+# The command to run when the container starts
+CMD ["/bin/bash"]
