@@ -1,4 +1,4 @@
-# Use an official Node runtime as the base image
+# Use Node.js 20 as the base image
 FROM node:20
 
 # Install the Angular CLI globally
