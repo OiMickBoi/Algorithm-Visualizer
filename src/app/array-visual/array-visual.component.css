@@ -1,6 +1,6 @@
 .parent-array{
     height: 100%;
-    width : 100%;
+    width : 75%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,13 +8,12 @@
     margin-bottom: 20px;
     border-radius: 10px;
     border-color: black;
-    background-color: red;
+    background-color: white;
 }
 
 rect{
-    fill: white;
     stroke: black;
-    stroke-width: 2;
+    stroke-width: 3;
 }
 
 /* .child-array{
