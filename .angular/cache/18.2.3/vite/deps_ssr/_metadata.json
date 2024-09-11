@@ -1,37 +1,55 @@
 {
-  "hash": "f8bab868",
-  "configHash": "776b24b5",
-  "lockfileHash": "675126b9",
-  "browserHash": "5750853a",
+  "hash": "5655a172",
+  "configHash": "a2209239",
+  "lockfileHash": "fe99171b",
+  "browserHash": "f4fe9411",
   "optimized": {
+    "@angular/common": {
+      "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
+      "file": "@angular_common.js",
+      "fileHash": "2ba5465d",
+      "needsInterop": false
+    },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "ddbc9885",
+      "fileHash": "62acc594",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "eec04316",
+      "fileHash": "a05c0059",
       "needsInterop": false
     },
     "@angular/platform-server": {
       "src": "../../../../../node_modules/@angular/platform-server/fesm2022/platform-server.mjs",
       "file": "@angular_platform-server.js",
-      "fileHash": "39a11ecf",
+      "fileHash": "8dfab4da",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "9f5dc56c",
+      "fileHash": "f3c8b06e",
+      "needsInterop": false
+    },
+    "@swimlane/ngx-charts": {
+      "src": "../../../../../node_modules/@swimlane/ngx-charts/fesm2015/swimlane-ngx-charts.mjs",
+      "file": "@swimlane_ngx-charts.js",
+      "fileHash": "486a8682",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-ME6N5KMM": {
-      "file": "chunk-ME6N5KMM.js"
+    "chunk-BIA4LAHN": {
+      "file": "chunk-BIA4LAHN.js"
+    },
+    "chunk-V6JUT7QT": {
+      "file": "chunk-V6JUT7QT.js"
+    },
+    "chunk-XKMCCLCQ": {
+      "file": "chunk-XKMCCLCQ.js"
     },
     "chunk-GPPHCCFQ": {
       "file": "chunk-GPPHCCFQ.js"
