@@ -1,0 +1,31 @@
+.parent-array{
+    height: 100%;
+    width : 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: red;
+}
+
+rect{
+    fill: white;
+    stroke: black;
+    stroke-width: 2;
+}
+
+/* .child-array{
+    height : 100%;
+    width : 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border-color: black;
+    background-color: gray;
+} */
