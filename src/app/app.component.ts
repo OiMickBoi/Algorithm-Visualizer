@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ChartDemoComponent } from './chart-demo/chart-demo.component';
 import { ArrayVisualComponent } from './array-visual/array-visual.component'
