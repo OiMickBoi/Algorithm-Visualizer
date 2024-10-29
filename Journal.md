@@ -35,3 +35,10 @@ react still did not install so now i'm using vite but still have react
 ```
  npm create vite@latest my-app -- --template react
 ```
+
+
+# 4:22 pm
+
+set up finished
+
+had a little trouble by using the wrong git link but i should be good now
