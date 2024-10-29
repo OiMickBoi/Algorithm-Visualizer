@@ -28,8 +28,9 @@
             # pkgs.nodePackages.pnpm
             # pkgs.yarn
 
-            # pkgs.nodePackages.typescript
-            # pkgs.nodePackages.typescript-language-server
+            #pkgs.nodePackages.typescript
+            pkgs.nodePackages.typescript-language-server
+            pkgs.vscode-langservers-extracted          
           ];
         };
       });

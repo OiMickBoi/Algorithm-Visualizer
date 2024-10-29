@@ -42,3 +42,18 @@ react still did not install so now i'm using vite but still have react
 set up finished
 
 had a little trouble by using the wrong git link but i should be good now
+
+
+# 4:51 pm
+got a little distracted but now have lsp for css, markdown, json and html
+because of 
+vscode-langservers-extracted
+
+# 4:59 pm
+
+well developing something completely from scratch is a lot slower than i thought
+it would be. probably it because i have to pick out my tools and everything. not
+even school projects were this slow. 
+
+but got the first component ready my environment is all set. let's do this!
+ 
