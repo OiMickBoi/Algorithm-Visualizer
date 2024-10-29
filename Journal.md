@@ -56,4 +56,57 @@ it would be. probably it because i have to pick out my tools and everything. not
 even school projects were this slow. 
 
 but got the first component ready my environment is all set. let's do this!
+
+
+ npm i react-chartjs-2 
+ npm install chart.js
+
  
+## 5:16 pm
+
+```
+import React from 'react';
+import { Line } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement
+} from 'chart.js';
+
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement
+);
+
+const YourComponent = () => {
+  const data = {
+    labels: ['Jan', 'Feb', 'Mar'],
+    datasets: [{
+      data: [10, 20, 30],
+      borderColor: 'blue'
+    }]
+  };
+
+  return (
+    <div style={{ width: '500px' }}>
+      <Line data={data} />
+    </div>
+  );
+};
+
+export default YourComponent;```
+
+used that as starter code pumped out by claude3
+
+makes a simple graph from jan to mar on x axis
+10 - 30 on y axis
+
+gonna play with this a bit and see how it goes
+
+still not seeing the code completion for markdown files
+
+
