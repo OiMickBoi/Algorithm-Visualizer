@@ -110,3 +110,11 @@ gonna play with this a bit and see how it goes
 still not seeing the code completion for markdown files
 
 
+
+i might just switch to raw html css and javasript since 
+its getting in the way of my libraries that way i can learn
+more about regular javascript. because its not a language im 
+strong with
+
+
+
