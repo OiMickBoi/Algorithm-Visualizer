@@ -118,3 +118,5 @@ strong with
 
 
 
+ok yeah i simplified everything.
+no more react until i've built a few more projects
