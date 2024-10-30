@@ -2,7 +2,7 @@ import './ChartTraser.module.css'
 // import { Chart } from 'react-chartjs-2';
 import { Chart as ChartJS, defaults } from 'chart.js/auto'
 import { Bar } from 'react-chartjs-2';
-
+// import { bubbleSort } from '../../algs/Sort'; TODO find out what is what is wrong with this import
 // import {
 //   Chart as ChartJS,
 //   CategoryScale,
@@ -25,13 +25,15 @@ import { Bar } from 'react-chartjs-2';
 // );
 
 export const ChartTraser = () => {
+  
+  const bigBoyData = [ 64, 34, 25, 12, 22, 11, 90];
 
   const data = {
-    labels: [ 'January', 'February','March','April','May' ],
+    labels: [1, 2, 3, 4, 5, 6],
     datasets: [
       {
         label: 'SampleData',
-        data: [1, 2, 3, 4, 5, 6],
+        data: bigBoyData,
         borderColor: 'rgba(75, 192, 192)',
         backgroundColor: 'rgba(75, 192, 192)',
         tension: 0.1
@@ -41,7 +43,7 @@ export const ChartTraser = () => {
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     scales: {
       x: {
         barPercentage: 0.9,
@@ -52,6 +54,7 @@ export const ChartTraser = () => {
 
   return (
     <div>
+      <button onClick={""}>Advance</button>
       <Bar options={options} data={data} />
     </div>
   );

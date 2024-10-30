@@ -156,4 +156,19 @@ currently setting up a test file
 
 
 
+## 5:15 pm 
+ok got the unit tests setup now need to test and bubble sort works
 
+i now need to work on hooking up the algorithm to the visualization bar
+
+this is the meat of the problem
+
+so i'll have to display the data in the array, then i'll need to run through
+the algorithm stopping at each point to highlight what element was just changed and then continue the process
+so i can either but a bunch of delays in between each alg or i can run through and store the each of the states
+and play them back
+
+i think taking a snapshot of each of the states will be a good long term approach. it will be expensive memory wise though.
+
+i think for now i need to make a test data file and hook it up to the alg function then put some delays just
+so i get some visual progess.
