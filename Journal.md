@@ -144,5 +144,16 @@ i think i'll skip that part and focus on the functionality of bubble sort and di
 
 
 # 2:14 PM
+did some more stuff
+did a basic bubble sort based on some pseudo code making some test cases with jest now 
+
+
+## 4:46 pm
+back with vengence
+
+
+currently setting up a test file
+
+
 
 
