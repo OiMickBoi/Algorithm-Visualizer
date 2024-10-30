@@ -1,54 +1,59 @@
-import { useState } from 'react'
 import './ChartTraser.module.css'
-import { Line } from 'react-chartjs-2';
+// import { Chart } from 'react-chartjs-2';
+import { Chart as ChartJS, defaults } from 'chart.js/auto'
+import { Bar } from 'react-chartjs-2';
 
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend} from 'chart.js';
+// import {
+//   Chart as ChartJS,
+//   CategoryScale,
+//   LinearScale,
+//   PointElement,
+//   LineElement,
+//   Title,
+//   Tooltip,
+//   Legend
+// } from 'chart.js';
 
-ChartJS.register (
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+// ChartJS.register (
+//   CategoryScale,
+//   LinearScale,
+//   PointElement,
+//   LineElement,
+//   Title,
+//   Tooltip,
+//   Legend
+// );
 
 export const ChartTraser = () => {
-  const rawData = [
-    {year: 2010, count: 10},
-    {year: 2011, count: 20},
-    {year: 2012, count: 15},
-    {year: 2013, count: 25},
-    {year: 2014, count: 22},
-    {year: 2015, count: 30},
-    {year: 2016, count: 28},
-  ];
 
   const data = {
-    labels: rawData.map(row => row.year),
+    labels: [ 'January', 'February','March','April','May' ],
     datasets: [
       {
-        label: 'Acqusitions by year', 
-        data: rawData.map(row => row.count),
-        backgroundColor: 'rgba(75, 192, 192, 0.6)'
+        label: 'SampleData',
+        data: [1, 2, 3, 4, 5, 6],
+        borderColor: 'rgba(75, 192, 192)',
+        backgroundColor: 'rgba(75, 192, 192)',
+        tension: 0.1
       }
     ]
+  };
+
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false,
+    scales: {
+      x: {
+        barPercentage: 0.9,
+        categoryPercentage: 1.0
+      }
+    }
   }
 
   return (
-
-    
-    <section>
-
-    </section>
-
+    <div>
+      <Bar options={options} data={data} />
+    </div>
   );
 };
 
