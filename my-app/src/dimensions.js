@@ -1,5 +1,23 @@
-import Chart from 'chart.js/auto'
 import { getDimensions } from './api'
+
+import {
+  Chart,
+  Colors,
+  BubbleController,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  Legend
+} from 'chart.js'
+
+Chart.register(
+  Colors,
+  BubbleController,
+  PointElement,
+  CategoryScale,
+  LinearScale,
+  Legend
+);
 
 (async function() {
   const data = await getDimensions();

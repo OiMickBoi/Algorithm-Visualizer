@@ -1,6 +1,25 @@
 import Chart from 'chart.js/auto'
 import { getAquisitionsByYear } from './api'
 
+import {
+  Chart,
+  Colors,
+  BarController,
+  CategoryScale,
+  LinearScale,
+  BarElement,
+  Legend
+} from 'chart.js'
+
+Chart.register(
+  Colors,
+  BarController,
+  BarElement,
+  CategoryScale,
+  LinearScale,
+  Legend
+);
+
 (async function() {
   // const data = [
   //   { year: 2010, count: 10 },
