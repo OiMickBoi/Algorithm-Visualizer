@@ -3,12 +3,36 @@ import { getDimensions } from './api'
 
 (async function() {
   const data = await getDimensions();
+  const chartAreaBorder = {
+    id: 'chartAreaBorder',
+
+    beforeDraw(chart, args, options) {
+      const { ctx, chartArea: { left, top, width, height } } = chart;
+
+      ctx.save();
+      ctx.strokeStyle = options.borderColor;
+      ctx.lineWidth = options.borderWidth;
+      ctx.setLineDash(options.borderDash || []);
+      ctx.lineDashOffset = options.borderDashOffset;
+      ctx.strokeRect(left, top, width, height);
+      ctx.restore();
+    }
+  };
 
   new Chart(
     document.getElementById('dimensions'),
     {
       type: 'bubble',
+      plugins: [ chartAreaBorder ],
       options: {
+        plugins: {
+          chartAreaBorder: {
+            borderColor: 'red',
+            borderWidth: 2,
+            borderDash: [ 5, 5 ],
+            borderDashOffset: 2,
+          }
+        },
         aspectRatio: 1,
         scales: {
           x: {
@@ -27,9 +51,6 @@ import { getDimensions } from './api'
       },
       data: {
         labels: data.map(x => x.year),
-
-// ...
-
         datasets: [
           {
             label: 'width = height',
@@ -62,10 +83,6 @@ import { getDimensions } from './api'
               }))
           }
         ]
-
-// ..
-
-
       }
     }
   );
