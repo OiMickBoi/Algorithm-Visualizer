@@ -118,3 +118,31 @@ strong with
 
 
 
+## 6:11 pm
+ok yeah i simplified everything.
+no more react until i've built a few more projects
+
+
+# Oct 30
+I quite frankly have had a enough of neovim and all these other terminal
+text editors they are to much too configure when i can have something
+work out of the box or with the click of a button. with vs code
+and vs codium. i'm going to stop hopping. if zed comes to windows
+i'll happily try that, but other than that. i've had enough.
+
+## 10:46 AM
+
+## 11:48 AM
+
+ok got something to appear on the react page
+
+## 11:52 AM
+
+Having trouble decreasing the spacing between the different bars.
+
+i think i'll skip that part and focus on the functionality of bubble sort and displaying that as each section changes.
+
+
+# 2:14 PM
+
+
