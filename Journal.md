@@ -118,5 +118,7 @@ strong with
 
 
 
+## 6:11 pm
 ok yeah i simplified everything.
 no more react until i've built a few more projects
+
