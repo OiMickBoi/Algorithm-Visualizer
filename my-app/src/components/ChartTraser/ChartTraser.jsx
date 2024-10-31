@@ -2,7 +2,8 @@ import './ChartTraser.module.css'
 // import { Chart } from 'react-chartjs-2';
 import { Chart as ChartJS, defaults } from 'chart.js/auto'
 import { Bar } from 'react-chartjs-2';
-// import { bubbleSort } from '../../algs/Sort'; TODO find out what is what is wrong with this import
+import { bubbleSort } from '../../algs/Sort'; // TODO find out what is what is wrong with this import
+
 // import {
 //   Chart as ChartJS,
 //   CategoryScale,
@@ -54,7 +55,7 @@ export const ChartTraser = () => {
 
   return (
     <div>
-      <button onClick={""}>Advance</button>
+      <button>Advance</button>
       <Bar options={options} data={data} />
     </div>
   );
