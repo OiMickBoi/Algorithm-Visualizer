@@ -172,3 +172,43 @@ i think taking a snapshot of each of the states will be a good long term approac
 
 i think for now i need to make a test data file and hook it up to the alg function then put some delays just
 so i get some visual progess.
+
+
+## 6:33 pm
+
+been reading the react documentation trying to figure out how to handle events and found this interesting section at
+https://legacy.reactjs.org/docs/rendering-elements.html
+
+React elements are immutable. Once you create an element, you can’t change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
+
+With our knowledge so far, the only way to update the UI is to create a new element, and pass it to root.render().
+
+Consider this ticking clock example:
+
+```
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+);
+
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  root.render(element);
+}
+
+setInterval(tick, 1000);
+```
+
+that will be important when making each snapshot. but i continue with the project
+
+
+## 6:51 pm
+i've been trying to add a button and event handler to the same file for testing purposes, but it has
+not been working very well. but i accidentally caused the graph to change while tring to get the event
+handler button to work.
+
+so i just need to make a new component control with a event hadler and somehow attatch it to the graph

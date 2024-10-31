@@ -25,6 +25,8 @@ import { bubbleSort } from '../../algs/Sort'; // TODO find out what is what is w
 //   Legend
 // );
 
+
+
 export const ChartTraser = () => {
   
   const bigBoyData = [ 64, 34, 25, 12, 22, 11, 90];
@@ -55,8 +57,9 @@ export const ChartTraser = () => {
 
   return (
     <div>
-      <button>Advance</button>
       <Bar options={options} data={data} />
+      <button onClick={bubbleSort(bigBoyData)}>Advance</button>
+      
     </div>
   );
 };
