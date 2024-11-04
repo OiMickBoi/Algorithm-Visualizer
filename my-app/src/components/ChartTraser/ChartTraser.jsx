@@ -58,7 +58,7 @@ export const ChartTraser = () => {
   return (
     <div>
       <Bar options={options} data={data} />
-      <button onClick={bubbleSort(bigBoyData)}>Advance</button>
+      {/* <button onClick={bubbleSort(bigBoyData)}>Advance</button> */}
       
     </div>
   );

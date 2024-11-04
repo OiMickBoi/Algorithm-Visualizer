@@ -1,4 +1,4 @@
-export const Controls = () => {
+function Controls() {
     function handleClick() {
         alert('You clicked me!');
     }
