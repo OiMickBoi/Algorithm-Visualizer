@@ -4,6 +4,7 @@
 <head>
   <title>Chart.js example</title>
   <script type="module" src="./src/traser.js"></script>
+  <script type="module" src="./main.js"></script>
 </head>
 
 <body>
@@ -17,10 +18,18 @@
   <!-- <script type="module" src="./src/acquisitions.js"></script> -->
   <button id="myButton" value="run external javascript">Click Me!</button>
 
-  <script type="module">
-    import { testFunction } from './src/utility.js';
-    document.getElementById('myButton').addEventListener('click', testFunction);
-  </script>
+
+  <!-- <script type="module">
+    // import { testFunction } from './src/utility.js';
+    // document.getElementById('myButton').addEventListener('click', testFunction);
+
+    import { bubbleSort } from './src/algs/sort.js';
+    document.getElementById('myButton').addEventListener('click', () =>{
+      const dataCopy = [...globalData];
+      const sortedData = bubbleSort(dataCopy);
+      console.log(sortedData);
+    })
+  </script> -->
 
 </body>
 
