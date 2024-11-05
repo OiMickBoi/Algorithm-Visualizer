@@ -260,3 +260,25 @@ function removeData(chart) {
 ## 1:50 pm
 the chart now changes whenever the sortme button is pressed
 
+## 1:58 pm
+
+found a bug where if sort me is clicked multiple times it removes all the data from the list.
+one at a time.
+
+## 3:59pm
+
+i'm going to skip focusing on that bug for now. 
+
+next i need to figure out how to change the colors, store the different states of the alg.
+
+https://www.chartjs.org/docs/latest/charts/bar.html
+
+documentation to the bar chart.
+
+documentation is wonderful. programming is just knowing a language and pouring through the docs.
+
+
+## 4:28pm 
+
+spent some time trying to figure out how to change the color of the bar. i kept forgetting to put the color in 
+quotiation marks
