@@ -256,3 +256,7 @@ function removeData(chart) {
 }
 ```
 
+
+## 1:50 pm
+the chart now changes whenever the sortme button is pressed
+

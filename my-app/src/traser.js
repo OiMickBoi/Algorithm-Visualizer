@@ -48,7 +48,6 @@ function removeData(chart) {
 export function update(chart, label, newData) {
   removeData(chart);
   addData(data, label, newData);
-  // chart.update();
 }
 
 document.getElementById('myButton').addEventListener('click', () =>{
