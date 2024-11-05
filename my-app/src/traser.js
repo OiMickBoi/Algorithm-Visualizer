@@ -6,6 +6,7 @@ import { bubbleSort } from './algs/sort';
 const col = [0, 1, 2, 3, 4, 5, 6];
 let globalData = [10, 20, 15, 25, 22, 30, 28];
 
+let myChart;
 
 (async function() {
   myChart = new Chart(
@@ -49,7 +50,6 @@ export function update(chart, label, newData) {
   addData(data, label, newData);
   // chart.update();
 }
-
 
 document.getElementById('myButton').addEventListener('click', () =>{
     globalData = bubbleSort(globalData);
