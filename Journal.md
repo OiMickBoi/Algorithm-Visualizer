@@ -129,3 +129,100 @@ text editors they are to much too configure when i can have something
 work out of the box or with the click of a button. with vs code
 and vs codium. i'm going to stop hopping. if zed comes to windows
 i'll happily try that, but other than that. i've had enough.
+
+
+# 10:46 AM
+
+## 11:48 AM
+
+ok got something to appear on the react page
+
+## 11:52 AM
+
+Having trouble decreasing the spacing between the different bars.
+
+i think i'll skip that part and focus on the functionality of bubble sort and displaying that as each section changes.
+
+
+# 2:14 PM
+did some more stuff
+did a basic bubble sort based on some pseudo code making some test cases with jest now 
+
+
+## 4:46 pm
+back with vengence
+
+
+currently setting up a test file
+
+
+
+## 5:15 pm 
+ok got the unit tests setup now need to test and bubble sort works
+
+i now need to work on hooking up the algorithm to the visualization bar
+
+this is the meat of the problem
+
+so i'll have to display the data in the array, then i'll need to run through
+the algorithm stopping at each point to highlight what element was just changed and then continue the process
+so i can either but a bunch of delays in between each alg or i can run through and store the each of the states
+and play them back
+
+i think taking a snapshot of each of the states will be a good long term approach. it will be expensive memory wise though.
+
+i think for now i need to make a test data file and hook it up to the alg function then put some delays just
+so i get some visual progess.
+
+
+## 6:33 pm
+
+been reading the react documentation trying to figure out how to handle events and found this interesting section at
+https://legacy.reactjs.org/docs/rendering-elements.html
+
+React elements are immutable. Once you create an element, you can’t change its children or attributes. An element is like a single frame in a movie: it represents the UI at a certain point in time.
+
+With our knowledge so far, the only way to update the UI is to create a new element, and pass it to root.render().
+
+Consider this ticking clock example:
+
+```
+const root = ReactDOM.createRoot(
+  document.getElementById('root')
+);
+
+function tick() {
+  const element = (
+    <div>
+      <h1>Hello, world!</h1>
+      <h2>It is {new Date().toLocaleTimeString()}.</h2>
+    </div>
+  );
+  root.render(element);
+}
+
+setInterval(tick, 1000);
+```
+
+that will be important when making each snapshot. but i continue with the project
+
+
+## 6:51 pm
+i've been trying to add a button and event handler to the same file for testing purposes, but it has
+not been working very well. but i accidentally caused the graph to change while tring to get the event
+handler button to work
+
+so i just need to make a new component control with a event hadler and somehow attatch it to the graph
+
+# Nov 4
+took the weekend off to work on dactyl skeletyl. can't get that one working either :(
+
+yah no more react documentation is too different and i am too unfamiliar with js to begin with.
+
+final.
+
+
+
+
+
+
