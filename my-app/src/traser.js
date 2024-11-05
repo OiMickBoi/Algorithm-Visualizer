@@ -1,7 +1,5 @@
 import Chart from 'chart.js/auto'
 import { bubbleSort } from './algs/sort';
-// import { globalData } from './data';
-// import { globalData } from '../main';
 
 const col = [0, 1, 2, 3, 4, 5, 6];
 let globalData = [10, 20, 15, 25, 22, 30, 28];
