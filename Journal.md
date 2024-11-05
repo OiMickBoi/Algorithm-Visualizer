@@ -224,14 +224,35 @@ final.
 
 # Nov 5
 
-12:20pm
+## 12:20pm
 
 got an alert to appear on the other page, but i need. i lost my tests. gonna have to figure that out 
 
 
 need to move the data;
 
+## 1:18pm
 
+i got the data to be sorted while having everything in separate files and simplified the html file by creating a main.js file.
 
+## 1:25 pm
 
+useful functions to update the charts
+```
+function addData(chart, label, newData) {
+  chart.data.labels.push(label);
+  chart.data.datasets.forEach((dataset) => {
+      dataset.data.push(newData);
+  });
+  chart.update();
+}
+
+function removeData(chart) {
+    chart.data.labels.pop();
+    chart.data.datasets.forEach((dataset) => {
+        dataset.data.pop();
+    });
+    chart.update();
+}
+```
 
