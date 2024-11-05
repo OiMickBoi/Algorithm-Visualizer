@@ -222,6 +222,15 @@ yah no more react documentation is too different and i am too unfamiliar with js
 final.
 
 
+# Nov 5
+
+12:20pm
+
+got an alert to appear on the other page, but i need. i lost my tests. gonna have to figure that out 
+
+
+need to move the data;
+
 
 
 
