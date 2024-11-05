@@ -15,7 +15,7 @@ import { bubbleSort } from '../../algs/Sort'; // TODO find out what is what is w
 //   Legend
 // } from 'chart.js';
 
-// ChartJS.register (
+// ChartJS.register p(
 //   CategoryScale,
 //   LinearScale,
 //   PointElement,
@@ -58,8 +58,6 @@ export const ChartTraser = () => {
   return (
     <div>
       <Bar options={options} data={data} />
-      {/* <button onClick={bubbleSort(bigBoyData)}>Advance</button> */}
-      
     </div>
   );
 };

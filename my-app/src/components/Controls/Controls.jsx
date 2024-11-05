@@ -1,6 +1,8 @@
+// import { ChartTraser } from './components/ChartTraser/ChartTraser'
+
 function Controls() {
     function handleClick() {
-        alert('You clicked me!');
+      const {bigBoyData} = useData();
     }
 
   return (
