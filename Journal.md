@@ -446,3 +446,4 @@ needed to depend on claude again. the problem was that i was using array.push(ne
 put should have been doing array.push([...newArray]) the spread operator will make a copy
 while the original just makes a pointer
 
+
