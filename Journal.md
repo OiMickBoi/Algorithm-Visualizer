@@ -414,3 +414,23 @@ document.getElementById('myButton').addEventListener('click', () =>{
   // iterateStates(sortStates, globalData, myChart, col);
 })
 ```
+
+## 2:53 pm
+was able to simplify the update and fix the bug now.
+i am now struggling to make a test where it will cycle through the array states
+pause and then move on to the next state.
+
+also look into making a terminal based refactor program. giving the capability
+to refactor code across multiple files just like there is in intellij
+
+## 3:23 pm
+
+was able to get the program working, but had to get claude to bail me out.
+it was a silly problem. i was pushing data to a double array, but the chart,
+was only displaying the first array. i'm still not sure how it was working
+the first time around.
+
+but i have a better idea how chart.js is working now so thats good at least.
+
+i think for future projects it will be a good idea to spend more time reading
+documentation.
