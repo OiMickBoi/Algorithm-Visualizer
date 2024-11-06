@@ -434,3 +434,15 @@ but i have a better idea how chart.js is working now so thats good at least.
 
 i think for future projects it will be a good idea to spend more time reading
 documentation.
+
+
+## 3:52 pm
+i loaded in new data and the step by step sort does't seem to be working anymore
+
+## 4:28 pm
+
+got it working
+needed to depend on claude again. the problem was that i was using array.push(newarray)
+put should have been doing array.push([...newArray]) the spread operator will make a copy
+while the original just makes a pointer
+
