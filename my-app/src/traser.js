@@ -77,7 +77,9 @@ async function iterateStates(states, chart) {
   try {
     console.log("Start");
     let delayTime = 2000;
-    states.forEach(delayedUpdate(chart, delayTime));
+    // states.forEach(delayedUpdate(chart, delayTime));
+    states.forEach(update(chart));
+    await delay(delayTime);
     console.log("After 2 seconds");
   } catch (error) {
     console.log("Operation cancelled", error);
@@ -92,5 +94,7 @@ let statesArray = [
 ];
  
 document.getElementById('myButton').addEventListener('click', () =>{
+    // globalData = bubbleSort(globalData);
+    // update(globalData, myChart);
     iterateStates(statesArray, myChart);
 })
