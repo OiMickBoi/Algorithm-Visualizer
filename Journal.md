@@ -446,4 +446,7 @@ needed to depend on claude again. the problem was that i was using array.push(ne
 put should have been doing array.push([...newArray]) the spread operator will make a copy
 while the original just makes a pointer
 
+## 4:36 pm
+ok now need to make a input box. so the user inserts their array, and the program is run based off that.
+
 
