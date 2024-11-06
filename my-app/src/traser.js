@@ -59,8 +59,6 @@ Chart.register(Colors);
   );
 })();
 
-// Chart.register(Colors);
-
 export function update(newData, chart) {
   chart.data.datasets.forEach((dataset) => {
       dataset.data.push(newData);
@@ -70,18 +68,29 @@ export function update(newData, chart) {
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-async function iterateStates(states, currentData, chart, label) {
+async function delayedUpdate(newData, chart, delayTime) {
+  update(newData, chart);
+  await delay(delayTime);
+}
+
+async function iterateStates(states, chart) {
   try {
     console.log("Start");
-    await delay(2000);
+    let delayTime = 2000;
+    states.forEach(delayedUpdate(chart, delayTime));
     console.log("After 2 seconds");
   } catch (error) {
     console.log("Operation cancelled", error);
   }
 }
 
+let statesArray = [
+  [10, 20, 15, 25, 22, 30, 28],
+  [10, 15, 20, 25, 22, 30, 28],
+  [10, 15, 20, 22, 25, 30, 28],
+  [10, 15, 20, 22, 25, 28, 30],
+];
+ 
 document.getElementById('myButton').addEventListener('click', () =>{
-    globalData = bubbleSort(globalData);
-    // update(globalData, myChart, col);
-    update(globalData, myChart);
+    iterateStates(statesArray, myChart);
 })
