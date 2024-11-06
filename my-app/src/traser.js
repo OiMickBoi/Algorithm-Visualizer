@@ -1,15 +1,10 @@
 import Chart, { Colors } from 'chart.js/auto';
-// import Colors from 'chart.js';
 import { bubbleSort } from './algs/sort';
 
 const col = [0, 1, 2, 3, 4, 5, 6];
 let globalData = [10, 20, 15, 25, 22, 30, 28];
 
 let myChart;
-
-// Chart.defaults.backgroundColor = 'red';
-// Chart.defaults.borderColor = '#36A2EB';
-// Chart.defaults.color = '#000';
 
 Chart.register(Colors);
  
@@ -23,15 +18,6 @@ Chart.register(Colors);
         labels: col,
         datasets: [
           {
-            // label: 'Acquisitions by year',
-            // data: globalData.map(row => row.count)
-            // backgroundColor: ['rgba(0, 0, 0, 0.1)',  // 0
-            //                   'rgba(0, 0, 0, 0.1)',  // 1
-            //                   'rgba(0, 0, 0, 0.1)',  // 2 
-            //                   'rgba(0, 0, 0, 0.1)',  // 3 
-            //                   'rgba(0, 0, 0, 0.1)',  // 4
-            //                   'rgba(0, 0, 0, 0.1)',  // 5 
-            //                   'rgba(0, 0, 0, 0.1)'], // 6
 
             backgroundColor: ['rgba(54, 162, 235, 0.8)',  // 0
                               'rgba(255, 99, 132, 1)',  // 1
@@ -49,9 +35,6 @@ Chart.register(Colors);
                           'rgba(255, 99, 132, 0.2)',  // 5 
                           'rgba(255, 99, 132, 0.2)'], // 6
             data: globalData
-            // borderColor: '#36A2EB',
-            // backgroundColor: '#9BD0F5'
-
           }
         ]
       }
@@ -60,27 +43,27 @@ Chart.register(Colors);
 })();
 
 export function update(newData, chart) {
-  chart.data.datasets.forEach((dataset) => {
-      dataset.data.push(newData);
-  });
+  // chart.data.datasets.forEach((dataset) => {
+  //     dataset.data.push(newData);
+  // });
+  // chart.update();
+  chart.data.datasets[0].data = newData;
   chart.update();
 }
 
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-async function delayedUpdate(newData, chart, delayTime) {
-  update(newData, chart);
-  await delay(delayTime);
-}
-
 async function iterateStates(states, chart) {
   try {
     console.log("Start");
-    let delayTime = 2000;
-    // states.forEach(delayedUpdate(chart, delayTime));
-    states.forEach(update(chart));
+    let delayTime = 1000;
+    for (const state of states) {
+      update(state, chart);
+      console.log(state);
+      await delay(delayTime);
+    }
     await delay(delayTime);
-    console.log("After 2 seconds");
+    console.log("End");
   } catch (error) {
     console.log("Operation cancelled", error);
   }
