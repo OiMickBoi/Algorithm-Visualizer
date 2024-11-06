@@ -61,30 +61,27 @@ Chart.register(Colors);
 
 // Chart.register(Colors);
 
-
-function addData(chart, label, newData) {
-  chart.data.datasets
-  chart.data.labels.push(label);
+export function update(newData, chart) {
   chart.data.datasets.forEach((dataset) => {
       dataset.data.push(newData);
   });
   chart.update();
 }
 
-function removeData(chart) {
-  chart.data.labels.pop();
-  chart.data.datasets.forEach((dataset) => {
-      dataset.data.pop();
-  });
-  chart.update();
-}
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
-export function update(chart, label, newData) {
-  removeData(chart);
-  addData(data, label, newData);
+async function iterateStates(states, currentData, chart, label) {
+  try {
+    console.log("Start");
+    await delay(2000);
+    console.log("After 2 seconds");
+  } catch (error) {
+    console.log("Operation cancelled", error);
+  }
 }
 
 document.getElementById('myButton').addEventListener('click', () =>{
     globalData = bubbleSort(globalData);
-    update(myChart, col, globalData);
+    // update(globalData, myChart, col);
+    update(globalData, myChart);
 })
