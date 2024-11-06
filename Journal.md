@@ -302,3 +302,135 @@ making mistakes and growing.
 doing is the best learning.
 
 so after each step of an array store the current array in a bigger array
+
+
+##
+so i am going to hardcode all the algs for now.
+
+this will just be a visualization tool where the user puts in their inputs and gets to see the visualization
+of the alg.
+
+so i'm just going to have a file of the different algs and i will hardcode the initial array, and pass in a map
+as a second parameter to fit in the different states
+so for now, before i modify the actual sorting algs i will modify the code i currently have so it reads a map,
+displays all the info in the first map and then switches to the next state
+
+i think fixing the bug is more important now because it completely removes the list
+
+
+## 2:12 pm
+```
+import Chart, { Colors } from 'chart.js/auto';
+import { bubbleSort } from './algs/sort';
+
+const col = [0, 1, 2, 3, 4, 5, 6];
+let globalData = [10, 20, 15, 25, 22, 30, 28];
+
+let sortStates = [
+                  [10, 20, 15, 25, 22, 30, 28], 
+                  [10, 15, 20, 25, 22, 30, 28], 
+                  [10, 15, 20, 22, 25, 30, 28], 
+                  [10, 15, 20, 22, 25, 28, 30]
+                  ]
+
+let myChart;
+
+Chart.register(Colors);
+ 
+(async function() {
+  myChart = new Chart(
+    document.getElementById('traser'),
+    {
+      type: 'bar',
+      data: {
+        // labels: globalData.map(row => row.year),
+        labels: col,
+        datasets: [
+          {
+            backgroundColor: ['rgba(54, 162, 235, 0.8)',  // 0
+                              'rgba(255, 99, 132, 1)',  // 1
+                              'rgba(54, 162, 235, 0.8)',  // 2 
+                              'rgba(54, 162, 235, 0.8)',  // 3 
+                              'rgba(54, 162, 235, 0.8)',  // 4
+                              'rgba(54, 162, 235, 0.8)',  // 5 
+                              'rgba(54, 162, 235, 0.8)'], // 6
+
+            borderColor: ['rgba(54, 162, 235, 1)',  // 0
+                          'rgba(255, 99, 132, 0.2)',  // 1
+                          'rgba(255, 99, 132, 0.2)',  // 2 
+                          'rgba(255, 99, 132, 0.2)',  // 3 
+                          'rgba(255, 99, 132, 0.2)',  // 4
+                          'rgba(255, 99, 132, 0.2)',  // 5 
+                          'rgba(255, 99, 132, 0.2)'], // 6
+            data: globalData
+            // borderColor: '#36A2EB',
+            // backgroundColor: '#9BD0F5'
+
+          }
+        ]
+      }
+    }
+  );
+})();
+
+// Chart.register(Colors);
+
+
+function addData(chart, label, newData) {
+  chart.data.labels.push(label);
+  chart.data.datasets.forEach((dataset) => {
+      dataset.data.push(newData);
+  });
+  chart.update();
+}
+
+function removeData(chart) {
+  chart.data.labels.pop();
+  chart.data.datasets.forEach((dataset) => {
+      dataset.data.pop();
+  });
+  chart.update();
+}
+
+export function update(chart, label, newData) {
+  removeData(chart);
+  addData(chart, label, newData);
+}
+
+
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+async function iterateStates(states, currentData, chart, label) {
+  console.log("Start");
+
+
+  // states.forEach(update(chart, label));
+  console.log("After 2 seconds");
+}
+
+document.getElementById('myButton').addEventListener('click', () =>{
+  globalData = bubbleSort(globalData);
+  update(myChart, col, globalData);
+  // iterateStates(sortStates, globalData, myChart, col);
+})
+```
+
+## 2:53 pm
+was able to simplify the update and fix the bug now.
+i am now struggling to make a test where it will cycle through the array states
+pause and then move on to the next state.
+
+also look into making a terminal based refactor program. giving the capability
+to refactor code across multiple files just like there is in intellij
+
+## 3:23 pm
+
+was able to get the program working, but had to get claude to bail me out.
+it was a silly problem. i was pushing data to a double array, but the chart,
+was only displaying the first array. i'm still not sure how it was working
+the first time around.
+
+but i have a better idea how chart.js is working now so thats good at least.
+
+i think for future projects it will be a good idea to spend more time reading
+documentation.
