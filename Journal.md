@@ -282,3 +282,23 @@ documentation is wonderful. programming is just knowing a language and pouring t
 
 spent some time trying to figure out how to change the color of the bar. i kept forgetting to put the color in 
 quotiation marks
+
+
+# Nov 6
+
+## 12:32 pm 
+
+
+figured out how to change the colors now need to figure out how to store each step.
+
+i could store a bunch of arrays. array of arrays. or map of arrays.
+
+i can't think of a better array. and i'd rather just build the project. i can always reafactor
+with a more efficient alg.
+
+i won't worry about engineering or other things let's just focus on getting the project working
+making mistakes and growing.
+
+doing is the best learning.
+
+so after each step of an array store the current array in a bigger array
