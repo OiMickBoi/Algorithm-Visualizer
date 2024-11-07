@@ -65,3 +65,8 @@ document.getElementById('myButton').addEventListener('click', () =>{
     let states = bubbleSortStates(globalData);
     iterateStates(states, myChart);
 })
+
+document.getElementById("input-array").addEventListener('click', () =>{
+  alert("hello!"); 
+})
+
