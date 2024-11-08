@@ -484,8 +484,23 @@ it might be better to do the labels of the array instead of the index. or label 
 so its both.
 
 
-
+## 1:11 pm
 need a new update function that includes the get cols 
 
+## 1:27 pm
 
+having trouble getting all the data loaded before the sort.
+
+the problem has to do with the update function.
+
+when i have chart.update in the update function it doesn't work properly.
+when i remove it, the data is loaded but then it doesn't show the sort
+
+## 2:05 pm
+
+having some strange issue where the
+bar on the far right is getting removed. 
+
+i figured out how to make the colors dynamic based on the array size in the mean
+time
 

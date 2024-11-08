@@ -19,21 +19,8 @@ Chart.register(Colors);
         datasets: [
           {
 
-            backgroundColor: ['rgba(54, 162, 235, 0.8)',  // 0
-                              'rgba(255, 99, 132, 1)',  // 1
-                              'rgba(54, 162, 235, 0.8)',  // 2 
-                              'rgba(54, 162, 235, 0.8)',  // 3 
-                              'rgba(54, 162, 235, 0.8)',  // 4
-                              'rgba(54, 162, 235, 0.8)',  // 5 
-                              'rgba(54, 162, 235, 0.8)'], // 6
-
-            borderColor: ['rgba(54, 162, 235, 1)',  // 0
-                          'rgba(255, 99, 132, 0.2)',  // 1
-                          'rgba(255, 99, 132, 0.2)',  // 2 
-                          'rgba(255, 99, 132, 0.2)',  // 3 
-                          'rgba(255, 99, 132, 0.2)',  // 4
-                          'rgba(255, 99, 132, 0.2)',  // 5 
-                          'rgba(255, 99, 132, 0.2)'], // 6
+            backgroundColor: Array(globalData.length).fill('rgba(54, 162, 235, 0.8)'),
+            borderColor: Array(globalData.length).fill('rgba(54, 162, 235, 1)'),            
             data: globalData
           }
         ]
@@ -42,7 +29,8 @@ Chart.register(Colors);
   );
 })();
 
-export function update(newData, chart) {
+
+function update(newData, chart) {
   chart.data.datasets[0].data = newData;
   chart.update();
 }
@@ -70,21 +58,26 @@ function readTextBoxValue() {
 } 
 
 function getCols(dataArray) {
-  return [...Array(dataArray.length).keys()].map(i => i + 0);
+  return [...Array(dataArray.length).keys()];
+}
+
+async function reset(chart, newCol, newData) {
+  chart.data.datasets[0].data = newData;
+  chart.data.labels = newCol;
+  chart.options.scales.x.min = 0; 
+  chart.update();
+  await delay(1000);
 }
 
 document.getElementById('myButton').addEventListener('click', () =>{
     let inputString = readTextBoxValue();
-    console.log("GET Array");
-    let globalData = inputString.split(",");
+    globalData = inputString.split(",").map(num => parseFloat(num));
     col = getCols(globalData);
-    console.log(getCols(col));
-    update(globalData, myChart);
+    // updateCols(col, myChart);
+    // update(globalData, myChart);
+    reset(myChart, col, globalData);
+
     let states = bubbleSortStates(globalData);
     iterateStates(states, myChart);
 })
-
-// document.getElementById("input-array").addEventListener('click', () =>{
-//   alert("hello!"); 
-// })
 
