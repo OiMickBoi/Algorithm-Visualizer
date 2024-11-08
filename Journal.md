@@ -449,4 +449,43 @@ while the original just makes a pointer
 ## 4:36 pm
 ok now need to make a input box. so the user inserts their array, and the program is run based off that.
 
+# Nov 7
+
+## 6:05 pm
+
+ok back to the input box
+
+## 6:17 pm
+
+made some progress
+right now the chart won't be updated with the new code for some reason.
+
+that is wierd.
+
+the input box is definetly getting the 
+
+maybe difference in data types.
+
+
+that is probably it now that i think of it 
+
+right i need to do some parsing in case the input is not a proper array
+
+i also need to sanitize the input since i'm going to be hosting this on my website.
+
+# Nov 8 
+
+## 12:51 pm
+
+ok yeah the problem was that i was reading in a string and not an array.
+now i need to get the array length and change it to be the elements of the array
+
+it might be better to do the labels of the array instead of the index. or label it 
+so its both.
+
+
+
+need a new update function that includes the get cols 
+
+
 

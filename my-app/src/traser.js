@@ -2,7 +2,8 @@ import Chart, { Colors } from 'chart.js/auto';
 import { bubbleSort, bubbleSortStates } from './algs/sort';
 
 let globalData = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
-const col = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const col = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let col = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let myChart;
 
 Chart.register(Colors);
@@ -61,12 +62,29 @@ async function iterateStates(states, chart) {
   }
 }
 
+function readTextBoxValue() {
+  const textBox = document.getElementById("input-array");
+  const value = textBox.value;
+  console.log(value);
+  return value;
+} 
+
+function getCols(dataArray) {
+  return [...Array(dataArray.length).keys()].map(i => i + 0);
+}
+
 document.getElementById('myButton').addEventListener('click', () =>{
+    let inputString = readTextBoxValue();
+    console.log("GET Array");
+    let globalData = inputString.split(",");
+    col = getCols(globalData);
+    console.log(getCols(col));
+    update(globalData, myChart);
     let states = bubbleSortStates(globalData);
     iterateStates(states, myChart);
 })
 
-document.getElementById("input-array").addEventListener('click', () =>{
-  alert("hello!"); 
-})
+// document.getElementById("input-array").addEventListener('click', () =>{
+//   alert("hello!"); 
+// })
 
