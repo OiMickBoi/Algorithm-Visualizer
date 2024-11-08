@@ -2,7 +2,8 @@ import Chart, { Colors } from 'chart.js/auto';
 import { bubbleSort, bubbleSortStates } from './algs/sort';
 
 let globalData = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5];
-const col = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const col = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let col = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let myChart;
 
 Chart.register(Colors);
@@ -18,21 +19,8 @@ Chart.register(Colors);
         datasets: [
           {
 
-            backgroundColor: ['rgba(54, 162, 235, 0.8)',  // 0
-                              'rgba(255, 99, 132, 1)',  // 1
-                              'rgba(54, 162, 235, 0.8)',  // 2 
-                              'rgba(54, 162, 235, 0.8)',  // 3 
-                              'rgba(54, 162, 235, 0.8)',  // 4
-                              'rgba(54, 162, 235, 0.8)',  // 5 
-                              'rgba(54, 162, 235, 0.8)'], // 6
-
-            borderColor: ['rgba(54, 162, 235, 1)',  // 0
-                          'rgba(255, 99, 132, 0.2)',  // 1
-                          'rgba(255, 99, 132, 0.2)',  // 2 
-                          'rgba(255, 99, 132, 0.2)',  // 3 
-                          'rgba(255, 99, 132, 0.2)',  // 4
-                          'rgba(255, 99, 132, 0.2)',  // 5 
-                          'rgba(255, 99, 132, 0.2)'], // 6
+            backgroundColor: Array(globalData.length).fill('rgba(54, 162, 235, 0.8)'),
+            borderColor: Array(globalData.length).fill('rgba(54, 162, 235, 1)'),            
             data: globalData
           }
         ]
@@ -41,7 +29,8 @@ Chart.register(Colors);
   );
 })();
 
-export function update(newData, chart) {
+
+function update(newData, chart) {
   chart.data.datasets[0].data = newData;
   chart.update();
 }
@@ -61,7 +50,31 @@ async function iterateStates(states, chart) {
   }
 }
 
-document.getElementById('myButton').addEventListener('click', () =>{
+function readTextBoxValue() {
+  const textBox = document.getElementById("input-array");
+  return textBox.value;
+} 
+
+function getCols(dataArray) {
+  return [...Array(dataArray.length).keys()];
+}
+
+async function reset(chart, newCol, newData) {
+  chart.data.datasets[0].data = newData;
+  chart.data.labels = newCol;
+  // chart.options.scales.x.min = 0; 
+  chart.update();
+  await delay(1000);
+}
+
+document.getElementById('myButton').addEventListener('click', async () =>{
+    let inputString = readTextBoxValue();
+    globalData = inputString.split(",").map(num => parseFloat(num));
+    col = getCols(globalData);
+    console.log(globalData);
+    console.log(col);
+    await reset(myChart, col, globalData);
     let states = bubbleSortStates(globalData);
-    iterateStates(states, myChart);
+    await iterateStates(states, myChart);
 })
+
