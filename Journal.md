@@ -504,3 +504,31 @@ bar on the far right is getting removed.
 i figured out how to make the colors dynamic based on the array size in the mean
 time
 
+
+## 2:53 pm
+
+ok found the problem it is the first element in the global array it is starting
+at index 1 instead of being populated with a number
+
+
+## 2:57 pm
+ok so the problem is the bracket
+i have not added any logic to handle the bracket, so it is becoming null and messing everything up.
+
+
+ok so now the basic functionality is in place,
+
+i just need to add better string parsing and error handling and do some sanitization.
+
+also need to sanitize the url bar. make sure that is all handled
+
+- [ ] handle string parsing
+- [ ] handle sanitization
+- [ ] add other algs
+- [ ] add UI to select the different algs
+- [ ] add color chaning to make it clear which indexes are being swapped
+
+
+
+
+

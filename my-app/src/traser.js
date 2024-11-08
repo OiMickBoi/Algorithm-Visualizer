@@ -52,9 +52,7 @@ async function iterateStates(states, chart) {
 
 function readTextBoxValue() {
   const textBox = document.getElementById("input-array");
-  const value = textBox.value;
-  console.log(value);
-  return value;
+  return textBox.value;
 } 
 
 function getCols(dataArray) {
@@ -64,20 +62,19 @@ function getCols(dataArray) {
 async function reset(chart, newCol, newData) {
   chart.data.datasets[0].data = newData;
   chart.data.labels = newCol;
-  chart.options.scales.x.min = 0; 
+  // chart.options.scales.x.min = 0; 
   chart.update();
   await delay(1000);
 }
 
-document.getElementById('myButton').addEventListener('click', () =>{
+document.getElementById('myButton').addEventListener('click', async () =>{
     let inputString = readTextBoxValue();
     globalData = inputString.split(",").map(num => parseFloat(num));
     col = getCols(globalData);
-    // updateCols(col, myChart);
-    // update(globalData, myChart);
-    reset(myChart, col, globalData);
-
+    console.log(globalData);
+    console.log(col);
+    await reset(myChart, col, globalData);
     let states = bubbleSortStates(globalData);
-    iterateStates(states, myChart);
+    await iterateStates(states, myChart);
 })
 
