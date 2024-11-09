@@ -531,4 +531,15 @@ also need to sanitize the url bar. make sure that is all handled
 
 
 
+## 3:28 pm 
+cleaning up the code with the help of claude.
 
+i'm bad at writing javascript.
+
+
+a problem occured when using claude to update my code.
+
+it now shows the final state of the sorted array, and then works through it, but
+i don't want that. it is extremely confusing as to what is going on.
+
+but i'm not sure where this is occuring
