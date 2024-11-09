@@ -129,7 +129,7 @@ const handleSort = async () => {
     const states = bubbleSortStates(inputData);
 
    
-    await updateChart(myChart, inputData);
+    // await updateChart(myChart, inputData); // this line is the problem. but iterate states won't start without it.
     await delay(INITIAL_DELAY);
     await iterateStates(states, myChart);
     
